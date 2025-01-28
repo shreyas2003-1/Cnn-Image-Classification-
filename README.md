@@ -31,4 +31,31 @@ ER Diagram:
 Below is the Entity-Relationship (ER) Diagram for the project. It showcases the flow and relationships among the dataset, feature extraction, CNN model, and classification outputs.
 
 Workflow Diagram:
-The workflow diagram illustrates the step-by-step process in the project pipeline.
+The workflow diagram illustrates the step-by-step process in the project import matplotlib.pyplot as plt
+import networkx as nx
+
+# Create a directed graph for the ER diagram
+er_graph = nx.DiGraph()
+
+# Define entities and their relationships
+er_graph.add_edges_from([
+    ("Dataset", "Image"),
+    ("Dataset", "Label"),
+    ("Image", "Feature Extraction"),
+    ("Feature Extraction", "CNN Model"),
+    ("CNN Model", "Classification"),
+    ("Classification", "Output")
+])
+
+# Draw the ER diagram
+plt.figure(figsize=(10, 6))
+pos = nx.spring_layout(er_graph, seed=42)  # Layout for better visualization
+nx.draw(er_graph, pos, with_labels=True, node_size=3000, 
+        node_color="skyblue", font_size=10, font_weight="bold", arrowsize=20)
+
+# Add title and save the figure
+plt.title("ER Diagram for Footwear Classification", fontsize=14)
+plt.savefig("ER_Diagram.png")  # Save as PNG file
+plt.show()
+pipeline.
+
